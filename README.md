@@ -3,6 +3,8 @@
 - # Godot Engine Nedir
 - Godot açık kaynak kodlu bir oyun motorudur. 2d ve 3d oyunlar üretip bunu bilgisayar, mobil, web, vr, konsol gibi birçok platforma aktarabilmenizi sağlar. Açık kaynak kodlu olmasından dolayı konsollara direkt export alınamıyor, kendiniz veya hizmet veren başkasından portlatmanız gerekiyor.  Ancak açık kaynak kodlu olmasından dolayı sadece oyun üretmek dışında motorun bir kopyası üzerinde oynamalar yapıp kendinize uygun bir motora çevirebilir, kendi oyun motorunuzu oluşturabilir veya farklı aplikasyonlar yapabilirsiniz. Örneğin bunlara RPG in Box ve Material Maker örnek verilebilir.
 
+Proje içi sunumdaki video Godot resmi YouTube videosundan alıntıdır. Tam haline [buradan](https://youtu.be/n1Lon_Q2T18?si=-mdzCeCwo1h0thcF) ulaşabilirsiniz.
+
 - # Godot'un Yapısı
 - Godotta nodeları bir tree/ağaç yapısına dizip sahneler oluşturur ve sinyaller aracılığıyla birbirlerini iletişim kurmalarını sağlayarak oyun yapısı sağlarız. Şimdi bunlara detaylıca değinelim.
 - ![image.png](sunu-assets/image_1742588891587_0.png)
