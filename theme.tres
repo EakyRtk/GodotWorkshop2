@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=4 format=3 uid="uid://4wc468yfdr18"]
 
-[ext_resource type="FontFile" uid="uid://mbut2b8c5vjs" path="res://fonts/Lilita_One/LilitaOne-Regular.ttf" id="1_e1x85"]
+[ext_resource type="FontFile" uid="uid://b1xft3tr6a417" path="res://fonts/Domine,Lexend,Lilita_One/Lexend/Lexend-VariableFont_wght.ttf" id="1_e1x85"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjfk0"]
 bg_color = Color(0.737193, 0.737193, 0.737193, 0.337255)
@@ -25,4 +25,3 @@ Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0.490196)
 Label/constants/outline_size = 31
-Label/constants/shadow_offset_y = 12

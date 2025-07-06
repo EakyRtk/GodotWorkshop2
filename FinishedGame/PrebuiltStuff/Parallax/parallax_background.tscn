@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bcbefko0ax8j6" path="res://FinishedGame/Assets/kenney_planets/Planets/planet06.png" id="4_3q7qi"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
+scroll_ignore_camera_zoom = true
 
 [node name="Background" type="Parallax2D" parent="."]
 repeat_size = Vector2(1920, 0)
@@ -40,7 +41,7 @@ autoscroll = Vector2(-15, 0)
 
 [node name="Planet06" type="Sprite2D" parent="SomePlanets"]
 self_modulate = Color(0.509245, 0.477216, 0.518888, 1)
-position = Vector2(1354, 932)
+position = Vector2(1725, 932)
 rotation = -0.379242
 scale = Vector2(0.09, 0.09)
 texture = ExtResource("4_3q7qi")

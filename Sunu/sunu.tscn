@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5wcc6mgyorfn"]
+[gd_scene load_steps=17 format=3 uid="uid://c5wcc6mgyorfn"]
 
 [ext_resource type="Script" uid="uid://dk3ws63q7cgwq" path="res://Sunu/sunu.gd" id="1_0y76e"]
 [ext_resource type="Texture2D" uid="uid://b7ry0w5liq586" path="res://icon.svg" id="1_iuxlj"]
@@ -6,8 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://cfie5wis2x7cs" path="res://Sunu/page.tscn" id="2_23msd"]
 [ext_resource type="VideoStream" uid="uid://chbm3033k7g4t" path="res://Sunu/output.ogv" id="3_auyhi"]
 [ext_resource type="Theme" uid="uid://4wc468yfdr18" path="res://theme.tres" id="3_gyupm"]
+[ext_resource type="Texture2D" uid="uid://21lfe8dw8nku" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/meteor_detailedSmall.png" id="4_h6m55"]
 [ext_resource type="Texture2D" uid="uid://3cur3p8hss2h" path="res://Sunu/logoraster.png" id="4_mpjra"]
+[ext_resource type="Texture2D" uid="uid://cdbjnpijrohxr" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/effect_yellow.png" id="4_wioaf"]
+[ext_resource type="Texture2D" uid="uid://ijmnjys2774p" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/meteor_detailedLarge.png" id="5_fy77f"]
+[ext_resource type="Texture2D" uid="uid://ya8scw4wwi0" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/ship_L.png" id="5_h6m55"]
 [ext_resource type="Script" uid="uid://3en0sb11t12i" path="res://Sunu/videopage.gd" id="6_gyupm"]
+[ext_resource type="PackedScene" uid="uid://decadu2pai8c7" path="res://FinishedGame/PrebuiltStuff/Parallax/parallax_background.tscn" id="6_lgtw5"]
+[ext_resource type="Texture2D" uid="uid://ddvjjwh2rnkvr" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/meteor_squareDetailedLarge.png" id="6_rcbno"]
+[ext_resource type="Texture2D" uid="uid://5aymveupqkxy" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/star_medium.png" id="9_0imr2"]
+[ext_resource type="Texture2D" uid="uid://bb7gj5lau6qh3" path="res://Sunu/gri.png" id="16_5lfw8"]
 
 [node name="Sunu" type="Node2D"]
 script = ExtResource("1_0y76e")
@@ -17,6 +25,56 @@ position = Vector2(960, 540)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("1_r5c7k")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("6_lgtw5")]
+follow_viewport_enabled = true
+scroll_ignore_camera_zoom = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Background" index="1"]
+self_modulate = Color(0.577008, 0.577008, 0.577008, 1)
+position = Vector2(288, 288)
+texture = ExtResource("4_h6m55")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Background" index="2"]
+self_modulate = Color(0.577008, 0.577008, 0.577008, 1)
+position = Vector2(1329, 912)
+rotation = -0.227796
+texture = ExtResource("5_fy77f")
+
+[node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/Background" index="3"]
+self_modulate = Color(0.577008, 0.577008, 0.577008, 1)
+position = Vector2(1412, 926)
+rotation = -0.227796
+scale = Vector2(0.559579, 0.559579)
+texture = ExtResource("4_h6m55")
+
+[node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/Background" index="4"]
+self_modulate = Color(0.577008, 0.577008, 0.577008, 1)
+position = Vector2(1483, 976)
+rotation = -0.993734
+scale = Vector2(0.559579, 0.559579)
+texture = ExtResource("4_h6m55")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/Background" index="5"]
+self_modulate = Color(0.577008, 0.577008, 0.577008, 1)
+position = Vector2(1770, 44.0001)
+rotation = 0.523009
+texture = ExtResource("6_rcbno")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(1966, 545)
+rotation = 1.57079
+texture = ExtResource("4_wioaf")
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(2056, 545)
+rotation = 1.57079
+texture = ExtResource("5_h6m55")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(3704, 545)
+rotation = 1.57079
+texture = ExtResource("9_0imr2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
@@ -62,8 +120,39 @@ layout_mode = 2
 texture = ExtResource("4_mpjra")
 stretch_mode = 3
 
-[node name="Page3" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+[node name="ContentSummarize" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
 layout_mode = 2
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/ContentSummarize" index="0"]
+color = Color(0.737255, 1, 0.698039, 0)
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/ContentSummarize/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "NELERE DEĞİNECEĞİZ?"
+horizontal_alignment = 1
+
+[node name="ContentSummarize2" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/ContentSummarize2" index="0"]
+color = Color(0.0547036, 0, 0.148989, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/PagesContainer/ContentSummarize2/MarginContainer" index="1"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/ContentSummarize2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_iuxlj")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/ContentSummarize2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "NELER YAPILABİLİYOR?"
+horizontal_alignment = 1
 
 [node name="VideoPage" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
 layout_mode = 2
@@ -83,9 +172,40 @@ loop = true
 position = Vector2(1019.5, 560)
 scale = Vector2(80.55, 42.2)
 
+[node name="Page" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/Page"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_5lfw8")
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/Page" index="1"]
+visible = false
+
+[node name="ReferenceRect" parent="CanvasLayer/Control/PagesContainer/Page/MarginContainer" index="0"]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/Page/MarginContainer" index="1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 64
+text = "YALNIZ KALMA"
+horizontal_alignment = 1
+
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(804, 598)
 texture = ExtResource("1_iuxlj")
 
+[editable path="ParallaxBackground"]
 [editable path="CanvasLayer/Control/PagesContainer/GodotLogo"]
+[editable path="CanvasLayer/Control/PagesContainer/ContentSummarize"]
+[editable path="CanvasLayer/Control/PagesContainer/ContentSummarize2"]
 [editable path="CanvasLayer/Control/PagesContainer/VideoPage"]
+[editable path="CanvasLayer/Control/PagesContainer/Page"]
