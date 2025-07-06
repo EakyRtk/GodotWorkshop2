@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3wijndbiw4ru"]
+
+[ext_resource type="Script" uid="uid://dshf4yuqs7fa4" path="res://FinishedGame/PrebuiltStuff/HitHurtBox/hurtbox.gd" id="1_24esm"]
+[ext_resource type="Script" uid="uid://bdjrb14xdmfsi" path="res://FinishedGame/PrebuiltStuff/Destroyables/meteor.gd" id="1_evt20"]
+[ext_resource type="Texture2D" uid="uid://ddvjjwh2rnkvr" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/meteor_squareDetailedLarge.png" id="1_fyj8m"]
+[ext_resource type="Script" uid="uid://bvosiqprfs0m3" path="res://FinishedGame/PrebuiltStuff/HitHurtBox/hitbox.gd" id="3_al5ht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fyj8m"]
+radius = 54.0093
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evt20"]
+radius = 47.0425
+
+[node name="Meteor" type="Node2D"]
+script = ExtResource("1_evt20")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.955963, 0.955963, 0.955963, 1)
+texture = ExtResource("1_fyj8m")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("1_24esm")
+metadata/_custom_type_script = "uid://dshf4yuqs7fa4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_fyj8m")
+debug_color = Color(0.806924, 0.0022993, 0.992794, 0.42)
+
+[node name="HitBox" type="Area2D" parent="."]
+script = ExtResource("3_al5ht")
+metadata/_custom_type_script = "uid://bvosiqprfs0m3"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_evt20")
+debug_color = Color(0.991535, 0, 0.264282, 0.42)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(3.8147e-06, -3.8147e-06)
+scale = Vector2(6.3, 6.3)

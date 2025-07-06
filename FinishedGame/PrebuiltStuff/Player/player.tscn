@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6uk3mphdr7d2"]
+
+[ext_resource type="Script" uid="uid://d117j8cfced2j" path="res://FinishedGame/PrebuiltStuff/Player/player.gd" id="1_lvlnu"]
+[ext_resource type="Texture2D" uid="uid://cdbjnpijrohxr" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/effect_yellow.png" id="1_q0j1s"]
+[ext_resource type="Texture2D" uid="uid://ya8scw4wwi0" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/ship_L.png" id="2_k8iqi"]
+[ext_resource type="Script" uid="uid://dshf4yuqs7fa4" path="res://FinishedGame/PrebuiltStuff/HitHurtBox/hurtbox.gd" id="3_d0xwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d0xwl"]
+radius = 40.0125
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_lvlnu")
+
+[node name="HurtBox" type="Area2D" parent="."]
+script = ExtResource("3_d0xwl")
+metadata/_custom_type_script = "uid://dshf4yuqs7fa4"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_d0xwl")
+debug_color = Color(0.925022, 0.203444, 0.465446, 0.42)
+
+[node name="Trail" type="Sprite2D" parent="."]
+position = Vector2(-87, 0)
+rotation = 1.5708
+texture = ExtResource("1_q0j1s")
+
+[node name="Ship" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("2_k8iqi")
+
+[node name="ShootingMarker" type="Marker2D" parent="."]
+position = Vector2(60, 0)

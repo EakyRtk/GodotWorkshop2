@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://decadu2pai8c7"]
+
+[ext_resource type="Texture2D" uid="uid://dv6dlfp1fxct7" path="res://FinishedGame/PrebuiltStuff/Parallax/Assets/space_background.png" id="2_kkbre"]
+[ext_resource type="Texture2D" uid="uid://dwwh04mvkli2m" path="res://FinishedGame/PrebuiltStuff/Parallax/Assets/space_stars.png" id="3_df0dq"]
+[ext_resource type="Texture2D" uid="uid://b373riksamkxv" path="res://FinishedGame/Assets/kenney_planets/Planets/planet09.png" id="3_i06pc"]
+[ext_resource type="Texture2D" uid="uid://bcbefko0ax8j6" path="res://FinishedGame/Assets/kenney_planets/Planets/planet06.png" id="4_3q7qi"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Background" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-30, 0)
+
+[node name="SpaceBackground" type="Sprite2D" parent="Background"]
+position = Vector2(960, 540)
+texture = ExtResource("2_kkbre")
+
+[node name="StarsBackground" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-20, 0)
+
+[node name="SpaceStars" type="Sprite2D" parent="StarsBackground"]
+position = Vector2(960, 540)
+texture = ExtResource("3_df0dq")
+
+[node name="Background2" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="Planet09" type="Sprite2D" parent="Background2"]
+self_modulate = Color(0.234842, 0.166988, 0.241631, 1)
+position = Vector2(695, 172)
+rotation = 0.270559
+scale = Vector2(0.572931, 0.572931)
+texture = ExtResource("3_i06pc")
+
+[node name="SomePlanets" type="Parallax2D" parent="."]
+repeat_size = Vector2(1920, 0)
+autoscroll = Vector2(-15, 0)
+
+[node name="Planet06" type="Sprite2D" parent="SomePlanets"]
+self_modulate = Color(0.509245, 0.477216, 0.518888, 1)
+position = Vector2(1354, 932)
+rotation = -0.379242
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("4_3q7qi")

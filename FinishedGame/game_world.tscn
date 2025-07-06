@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn15ipcltyfie"]
+
+[ext_resource type="PackedScene" uid="uid://decadu2pai8c7" path="res://FinishedGame/PrebuiltStuff/Parallax/parallax_background.tscn" id="1_0hal7"]
+[ext_resource type="PackedScene" uid="uid://c6uk3mphdr7d2" path="res://FinishedGame/PrebuiltStuff/Player/player.tscn" id="2_ujvko"]
+[ext_resource type="PackedScene" uid="uid://c3wijndbiw4ru" path="res://FinishedGame/PrebuiltStuff/Destroyables/meteor.tscn" id="3_7n5vu"]
+[ext_resource type="PackedScene" uid="uid://bgun6eil2amwb" path="res://FinishedGame/PrebuiltStuff/crt_shader.tscn" id="4_w0t26"]
+
+[sub_resource type="Environment" id="Environment_w0t26"]
+background_mode = 3
+tonemap_mode = 3
+glow_enabled = true
+glow_blend_mode = 1
+glow_hdr_threshold = 0.58
+adjustment_enabled = true
+
+[node name="GameWorld" type="Node2D"]
+metadata/_edit_lock_ = true
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("1_0hal7")]
+
+[node name="Meteors" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Meteor" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(1184, 597)
+
+[node name="Meteor2" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(1381, 347)
+
+[node name="Meteor3" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(1507, 476)
+
+[node name="Meteor4" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(1772, 892)
+
+[node name="Meteor5" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(2224, 691)
+
+[node name="Meteor6" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(2547, 683)
+
+[node name="Meteor7" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(2809, 299)
+
+[node name="Meteor8" parent="Meteors" instance=ExtResource("3_7n5vu")]
+position = Vector2(3048, 960)
+
+[node name="Player" parent="." instance=ExtResource("2_ujvko")]
+position = Vector2(212, 518)
+
+[node name="CRTShader" parent="." instance=ExtResource("4_w0t26")]
+visible = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_w0t26")
+
+[editable path="CRTShader"]

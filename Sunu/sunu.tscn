@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://c5wcc6mgyorfn"]
+
+[ext_resource type="Texture2D" uid="uid://b7ry0w5liq586" path="res://icon.svg" id="1_iuxlj"]
+[ext_resource type="Script" uid="uid://bqn7u0g47asgf" path="res://Sunu/camera.gd" id="1_r5c7k"]
+[ext_resource type="PackedScene" uid="uid://cfie5wis2x7cs" path="res://Sunu/page.tscn" id="2_23msd"]
+[ext_resource type="VideoStream" uid="uid://chbm3033k7g4t" path="res://Sunu/output.ogv" id="3_auyhi"]
+[ext_resource type="Texture2D" uid="uid://bpjn0qgqu0vol" path="res://Sunu/logo_large_color_light.svg" id="4_k2tvs"]
+
+[node name="Sunu" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+script = ExtResource("1_r5c7k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="PagesContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_direction = 2
+layout_mode = 0
+offset_right = 7692.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 0
+
+[node name="Page" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/Control/PagesContainer/Page/MarginContainer" index="1"]
+layout_mode = 2
+stream = ExtResource("3_auyhi")
+autoplay = true
+expand = true
+loop = true
+
+[node name="Page2" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/Page2" index="0"]
+color = Color(0.950245, 0.796692, 0.927224, 1)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/Page2/MarginContainer" index="1"]
+layout_mode = 2
+texture = ExtResource("4_k2tvs")
+stretch_mode = 3
+
+[node name="Page3" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(804, 598)
+texture = ExtResource("1_iuxlj")
+
+[editable path="CanvasLayer/Control/PagesContainer/Page"]
+[editable path="CanvasLayer/Control/PagesContainer/Page2"]
