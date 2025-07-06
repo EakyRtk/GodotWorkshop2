@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5wcc6mgyorfn"]
+[gd_scene load_steps=18 format=3 uid="uid://c5wcc6mgyorfn"]
 
 [ext_resource type="Script" uid="uid://dk3ws63q7cgwq" path="res://Sunu/sunu.gd" id="1_0y76e"]
 [ext_resource type="Texture2D" uid="uid://b7ry0w5liq586" path="res://icon.svg" id="1_iuxlj"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://ddvjjwh2rnkvr" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/meteor_squareDetailedLarge.png" id="6_rcbno"]
 [ext_resource type="Texture2D" uid="uid://5aymveupqkxy" path="res://FinishedGame/Assets/kenney_simple-space/PNG/Retina/star_medium.png" id="9_0imr2"]
 [ext_resource type="Texture2D" uid="uid://bb7gj5lau6qh3" path="res://Sunu/gri.png" id="16_5lfw8"]
+[ext_resource type="Texture2D" uid="uid://c2qb6u14hwx0c" path="res://Sunu/greenstuffidk.png" id="17_js7bd"]
 
 [node name="Sunu" type="Node2D"]
 script = ExtResource("1_0y76e")
@@ -172,10 +173,10 @@ loop = true
 position = Vector2(1019.5, 560)
 scale = Vector2(80.55, 42.2)
 
-[node name="Page" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+[node name="ThereArePeopleOutThere" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/Page"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/ThereArePeopleOutThere"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -185,19 +186,83 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("16_5lfw8")
 
-[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/Page" index="1"]
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/ThereArePeopleOutThere" index="1"]
 visible = false
 
-[node name="ReferenceRect" parent="CanvasLayer/Control/PagesContainer/Page/MarginContainer" index="0"]
+[node name="ReferenceRect" parent="CanvasLayer/Control/PagesContainer/ThereArePeopleOutThere/MarginContainer" index="0"]
 visible = false
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/Page/MarginContainer" index="1"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/ThereArePeopleOutThere/MarginContainer" index="1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 64
-text = "YALNIZ KALMA"
+text = "ÇEVRE OLAYI..."
 horizontal_alignment = 1
+
+[node name="Clubsnstuff" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/Clubsnstuff" index="0"]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/PagesContainer/Clubsnstuff/MarginContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/Clubsnstuff/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 96
+text = "KULÜPLER ve GAME JAMLER"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/Clubsnstuff"]
+z_index = -1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("17_js7bd")
+
+[node name="LetsStartThen" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
+layout_mode = 2
+
+[node name="BackgroundColorRect" parent="CanvasLayer/Control/PagesContainer/LetsStartThen" index="0"]
+visible = false
+
+[node name="MarginContainer" parent="CanvasLayer/Control/PagesContainer/LetsStartThen" index="1"]
+theme_override_constants/margin_bottom = 350
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/Control/PagesContainer/LetsStartThen/MarginContainer" index="1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/LetsStartThen/MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "BAŞLAYALIM O ZAMAN"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/PagesContainer/LetsStartThen"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_iuxlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Control/PagesContainer/LetsStartThen"]
+position = Vector2(769, 919)
+scale = Vector2(3.32031, 1)
+texture = ExtResource("1_iuxlj")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PagesContainer/LetsStartThen"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 868.0
+offset_right = 436.0
+offset_bottom = 946.0
+theme_override_font_sizes/font_size = 82
+text = "me when"
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(804, 598)
@@ -208,4 +273,6 @@ texture = ExtResource("1_iuxlj")
 [editable path="CanvasLayer/Control/PagesContainer/ContentSummarize"]
 [editable path="CanvasLayer/Control/PagesContainer/ContentSummarize2"]
 [editable path="CanvasLayer/Control/PagesContainer/VideoPage"]
-[editable path="CanvasLayer/Control/PagesContainer/Page"]
+[editable path="CanvasLayer/Control/PagesContainer/ThereArePeopleOutThere"]
+[editable path="CanvasLayer/Control/PagesContainer/Clubsnstuff"]
+[editable path="CanvasLayer/Control/PagesContainer/LetsStartThen"]
