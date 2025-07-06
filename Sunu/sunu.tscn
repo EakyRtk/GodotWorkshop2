@@ -197,7 +197,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 64
-text = "ÇEVRE OLAYI..."
+text = "yalnız takılma..."
 horizontal_alignment = 1
 
 [node name="Clubsnstuff" parent="CanvasLayer/Control/PagesContainer" instance=ExtResource("2_23msd")]
